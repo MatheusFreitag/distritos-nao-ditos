@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150693316-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-150693316-1');
+	</script>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Distritos não Ditos</title>
+	
+	<meta property="og:url" content="https://matheusfreitag.github.io/distritos-nao-ditos/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Distritos não Ditos" />
+    <meta property="og:description" content="Como Pelotas(RS) se organiza em torno da gastronomia" />
+    <meta property="og:image" content="https://i.imgur.com/tgt9s9l.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@matheusfreitag" />
+    <meta name="twitter:title" content="Distritos não Ditos" />
+    <meta name="twitter:description" content="Como Pelotas(RS) se organiza em torno da gastronomia" />
+    <meta name="twitter:image" content="https://i.imgur.com/tgt9s9l.png" />
+    <meta name="twitter:image:alt" content="Como Pelotas(RS) se organiza em torno da gastronomia" />
+
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Oleo+Script|Nunito:400,400i,900&amp;display=swap" rel="stylesheet">
+	<link rel='stylesheet' href='style.css'>
+
+
+</head>
+
+<body>
+
+	<main>
+		<section id='intro'>
+			<h1 class='intro__hed'>Distritos não Ditos</h1>
+			<p class='intro__dek'>
+				Pelotas é uma cidade no interior do Rio Grande do Sul. De fato, é
+				<a target="_blank" href="https://pt.wikipedia.org/wiki/Lista_de_munic%C3%ADpios_do_Rio_Grande_do_Sul_por_popula%C3%A7%C3%A3o">a maior cidade da metade sul do estado</a>, e
+				possuí uma forte gastronomia local.
+				Seria essa gastronomia organizada geograficamente de alguma forma? É possível que hajam distritos extra-oficiais que expliquem o comportamento alimentar da cidade? É o que iremos analisar aqui.
+			</p>
+		</section>
+
+		<section id='scrolly'>
+
+			<article>
+				<div class='step' data-step='1'>
+					<h2>Motivação & Metodologia</h2>
+					<img class="mobile" src="img/dog.jpg" alt="">
+					<p>
+						Em alguns finais de noite (E por <i>"alguns"</i> eu quero dizer <i>"mais do que o meu Nubank gostaria"</i> ) eu costumo pedir comida
+						com esses aplicativos de Delivery. É bem confortável e tudo que eu vejo são os 30-40 minutos que separam o botão de conclusão
+						do pedido e a entrega na minha porta.
+						<br><br><br>
+						Apesar de toda uma logística fazer o pedido chegar na minha porta, e se eu resolvesse
+						<i>SAIR DE CASA</i> para jantar?
+						<b>A minha escolha de cardápio afetaria a região da cidade que eu deveria me deslocar?</b>
+						<br><br><br>
+						Existiriam distritos na cidade que agrupam
+						tipos de gastronomia? É isso que pretendo responder aqui.
+						<br>
+						<span style='font-size: 12px;'>(Aqui é possível ver um exemplo de uma dessas noites que motivaram esse estudo).</span>
+						<br><br><br>
+						Com dados do TripAdvisor, famoso serviço de recomendações turísticas, investiguei a localização de restaurantes  para entender as suas distribuições. Os resultados serão vistos a seguir.
+					</p>
+
+				</div>
+
+				<div class='step' data-step='2'>
+					<h2>Antes, um pequeno spoiler</h2>
+					<img class="mobile" src="img/giphy.gif" alt="">
+					<p>
+						A considerável maioria dos estabelecimentos da cidade (ou pelo menos aqueles listados no TripAdvisor) estão localizados no Centro de Pelotas.
+						Em todos os cenários, o bairro foi o que mais continha resultados. Pessoalmente, esse resultado já era esperado pois em Pelotas, o Centro também concentra grande parte da atividade comercial, de serviços, financeira e cultural.
+						<br><br><br>
+						Já no início podemos concluir que o Centro é o local mais diverso para gastronomia, então, em casos de indecisão, esse seria um bom lugar para se fazer escolhas. Tendo isso em mente, vamos ver quais outros bairros se destacam em diferentes tipos de culinária.
+					</p>
+
+				</div>
+
+
+				<div class='step' data-step='3'>
+					<h2>Pizzarias</h2>
+					<img class="mobile" src="img/Pizzaria.png" alt="">
+					<p>
+						Se em Pelotas a sua vontade é de Pizza, temos uma quantidade interessante de bairros que podem ser
+						visitados. 8 bairros são listados, com o Centro, Três Vendas e Areal possuindo a maior quantidade de restaurantes.
+						Dos 50 restaurantes retornados, o Centro corresponde a 66% das opções, o Três Vendas a 10% e o Areal a 6%.
+						Sem o Centro, Três Vendas e Areal ficam com 29% e 17% respectivamente.
+					</p>
+					<div class="canvas-container">
+						<canvas id='chart_Pizzarias'></canvas>
+					</div>
+					<p>
+						O gráfico acima (e todos nessa página) são clicáveis. Experimente clicar na legenda "Centro" para que essa porção do gráfico desapareça e possa ser vista a análisa feita acima com outros bairros.
+						Os filtros utilizados na busca do TripAdvisor foram "Pizza" e "Italiana".
+					</p>
+
+				</div>
+
+
+				<div class='step' data-step='4'>
+					<h2>Comida Asiática</h2>
+					<img class="mobile" src="img/Sushi.png" alt="">
+					<p>
+						"Comida Asiática" é um termo muito abrangente, mas minha intenção aqui era procurar por pratos como "Sushi", "Yakissoba" e sopas e caldos típicos. Para isso, filtrei restaurantes por "Asian", Chinese", "Japanese" e "Sushi".
+					</p>
+					<div class="canvas-container">
+						<canvas id='chart_Asian'></canvas>
+					</div>
+					<p>
+						Neste caso, apenas 3 bairros surgiram, sendo eles "Centro", "Areal" e "Laranjal". Dos 9 restaurantes, a esmagadora maioria fica no Centro, com 78% dos restaurantes, seguidos do Areal e Laranjal, com quantidades idênticas (11% cada).
+					</p>
+				</div>
+
+
+				<div class='step' data-step='4'>
+					<h2>Churrascarias</h2>
+					<img class="mobile" src="img/Churrascaria.png" alt="">
+					<p>
+						O vosso autor é vegetariano, mas entende que churrascarias existem e que pessoas procuram por elas.
+						Em Pelotas, muitos bairros contam com uma, tendo 10 bairros retornados na pesquisa.
+						Após o Centro, Laranjal, Porto e Areal contam com a maior quantidade de estabelecimentos do tipo:
+					</p>
+					<div class="canvas-container">
+						<canvas id='chart_Churrascaria'></canvas>
+					</div>
+					<p>
+						O Centro ficou com 55% dos restaurantes desse tipo, seguidos por Laranjal(10%),  Porto(6%) e Areal(6%).
+						Os filtros usados foram "Barbecue" e "Steakhouse".
+					</p>
+				</div>
+
+
+
+
+				<div class='step' data-step='5'>
+					<h2>Lanches</h2>
+					<img class="mobile" src="img/Bauru.png" alt="">
+					<p>
+						Pelotas é muito famosa por seus Baurus. Nunca diga a um pelotense que o bauru da sua cidade é melhor, pois além de ser uma mentira, ele ficará ofendido.
+						Por aqui, Centro, Areal e Porto aglomeram a maior parte das lancherias, com quase 90% das lancherias localizadas nesses bairros.
+					</p>
+					<div class="canvas-container">
+						<canvas id='chart_Bauru'></canvas>
+					</div>
+					<p>
+						Dos filtros disponíveis, para esta busca foram selecionais "American", "Burger", "Hot Dog" e "Diner".
+					</p>
+				</div>
+
+
+				<div class='step' data-step='6'>
+					<h2>Doçarias</h2>
+					<img class="mobile" src="img/Docaria.png" alt="">
+					<p>
+						Mais que Baurus, Pelotas é nacionalmente conhecida como "A Cidade do Doce". Temos uma festa anual, a "Fenadoce" que celebra esta parte da cultura da cidade. Com as doçarias, 5 bairros se mostram mais presentes, e pela primeira vez, o Centro não concentrou mais da metade dos estabelecimentos do tipo, mas chega perto, com 43% dos resultados:
+					</p>
+					<div class="canvas-container">
+						<canvas id='chart_doces'></canvas>
+					</div>
+					<p>
+						Dos filtros disponíveis, foi selecionada a opção "Dessert".
+					</p>
+				</div>
+
+
+				<div class='step' data-step='7'>
+					<h2>Cafés</h2>
+					<img class="mobile" src="img/Cafe.png" alt="">
+					<p>
+						Essa categoria não conta, geralmente, como "jantar", mas existem cafeterias em aplicativos de Delivery e eu fiquei curioso com suas localizações. De fato, Pelotas concentra muitas delas, com 50 estabelecimentos retornados em 8 bairros distintos. Todavia, o centro da cidade conta com 78% dos exemplos, e os 22% restantes se dividem em 'Porto', 'Três Vendas', 'Areal', 'Padre Reus', 'São Gonçalo', o '5º Distrito' e o 'Laranjal'.
+					</p>
+					<div class="canvas-container">
+						<canvas id='chart_cafes'></canvas>
+					</div>
+					<p>
+						Dos filtros disponíveis, foi selecionada a opção "Cafe".
+					</p>
+				</div>
+
+
+				<div class='step' data-step='8'>
+					<h2>Bares</h2>
+					<img class="mobile" src="img/Bares.png" alt="">
+					<p>
+						A vida noturna da cidade parece vibrante, ou pelo menos tem uma estrutura para isso. Temos 72 bares, o maior número de resultados em todas as categorias, divididos em 10 bairros distintos da cidade.
+						Como esperado, o Centro concetra pouco mais da metade das opções, com 52% dos resultados, seguido de 'Fragata', 'Três Vendas' e 'Areal'.
+					</p>
+					<div class="canvas-container">
+						<canvas id='chart_bares'></canvas>
+					</div>
+					<p>
+						Dos filtros disponíveis, foram selecionadas as opções "Bar", "Brew Pub", "Pub" e "Wine Bar".
+					</p>
+				</div>
+
+			</article>
+
+			<figure>
+				<img id="focusImage" class="notFull" src="img/dog.jpg" alt="Gif">
+			</figure>
+		</section>
+
+		<section id='resultados'>
+			<h2>Conclusão</h2>
+			<p>
+				Pelotas se organiza em torno da culinária local, mas não da maneira dramática que eu esperava. De fato, uma maioria dos restaurantes se concentra no centro da cidade, e por mais que alguns bairros se destaquem em tipos específicos de cardápios, temos outros bairros que sequer aparecem nos resultados, ou aparecem brevemente com resultados escassos.
+				<br><br>
+				A base de dados foi obtida do TripAdvisor, então pode ser o caso de outros buscadores retornarem resultados diferentes, mas optei por esse por ser um serviço popular entre viajantes.
+				<br>
+				Trabalhos futuros podem incluir: Outros buscadores retornam resultados diferentes? É uma tendência de cidades do interior concentrarem restaurantes em seus centros administrativos ou isso é uma tendência geral?
+			</p>
+
+			<hr>
+
+			<div class="footer">
+				<p>Desenvolvido por <a target="_blank" href="https://matheusfreitag.github.io">Matheus Freitag</a>.
+				<br />Este projeto foi feito usando dados do <a target="_blank" href="https://www.tripadvisor.com/">TripAdvisor</a>, e os mapas foram criados usando <a target="_blank" href="https://www.mapbox.com/mapbox-studio/">Mapbox Studio</a>.
+				<br> Os gráficos foram feitos usando <a target="_blank" href="https://www.chartjs.org/">ChartJS</a>.</p>
+			</div>
+		</section>
+	</main>
+
+	<!-- <div class='debug'></div> -->
+	<script src='https://unpkg.com/d3@5.9.1/dist/d3.min.js'></script>
+	<script src='https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js'></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src='stickyfill.min.js'></script>
+	<script src='scrollama.min.js'></script>
+	<script>
+		// using d3 for convenience
+		var main = d3.select('main')
+		var scrolly = main.select('#scrolly');
+		var figure = scrolly.select('figure');
+		var article = scrolly.select('article');
+		var step = article.selectAll('.step');
+
+		// initialize the scrollama
+		var scroller = scrollama();
+
+		// generic window resize listener event
+		function handleResize() {
+			// 1. update height of step elements
+			var stepH = Math.floor(window.innerHeight );
+			step.style('height', stepH + 'px');
+
+			var figureHeight = window.innerHeight / 2
+			var figureMarginTop = (window.innerHeight - figureHeight) / 2
+
+			figure
+				.style('height', figureHeight + 'px')
+				.style('top', figureMarginTop + 'px');
+
+
+			// 3. tell scrollama to update new element dimensions
+			scroller.resize();
+		}
+
+		// scrollama event handlers
+		function handleStepEnter(response) {
+			// console.log(response)
+			// response = { element, direction, index }
+
+			// add color to current step only
+			step.classed('is-active', function (d, i) {
+				return i === response.index;
+			})
+
+			// update graphic based on step
+			switch(response.index){
+				case 0:
+					document.getElementById("focusImage").src= 'img/dog.jpg';
+					document.getElementById("focusImage").classList = 'notFull';
+					break;
+
+				case 1:
+					document.getElementById("focusImage").src= 'img/giphy.gif';
+					document.getElementById("focusImage").classList = 'full';
+					break;
+
+				case 2:
+					document.getElementById("focusImage").src= 'img/Pizzaria.png';
+					document.getElementById("focusImage").classList = 'full';
+					break;
+
+				case 3:
+					document.getElementById("focusImage").src= 'img/Sushi.png';
+					document.getElementById("focusImage").classList = 'full';
+					break;
+
+				case 4:
+					document.getElementById("focusImage").src= 'img/Churrascaria.png';
+					document.getElementById("focusImage").classList = 'full';
+					break;
+
+				case 5:
+					document.getElementById("focusImage").src= 'img/Bauru.png';
+					document.getElementById("focusImage").classList = 'full';
+					break;
+
+				case 6:
+					document.getElementById("focusImage").src= 'img/Docaria.png';
+					document.getElementById("focusImage").classList = 'full';
+					break;
+
+				case 7:
+					document.getElementById("focusImage").src= 'img/Cafe.png';
+					document.getElementById("focusImage").classList = 'full';
+					break;
+
+				case 8:
+					document.getElementById("focusImage").src= 'img/Bares.png';
+					document.getElementById("focusImage").classList = 'full';
+					break;
+			}
+
+		}
+
+		function setupStickyfill() {
+			d3.selectAll('.sticky').each(function () {
+				Stickyfill.add(this);
+			});
+		}
+
+		function init() {
+			setupStickyfill();
+
+			// 1. force a resize on load to ensure proper dimensions are sent to scrollama
+			handleResize();
+
+			// 2. setup the scroller passing options
+			// 		this will also initialize trigger observations
+			// 3. bind scrollama event handlers (this can be chained like below)
+			scroller.setup({
+				step: '#scrolly article .step',
+				offset: 0.55,
+				debug: false,
+			})
+				.onStepEnter(handleStepEnter)
+
+
+			// setup resize event
+			window.addEventListener('resize', handleResize);
+		}
+
+		// kick things off
+		init();
+	</script>
+	<script>
+		var ctx_pizzarias = document.getElementById('chart_Pizzarias').getContext('2d');
+		var pizzariaPie = new Chart(ctx_pizzarias, {
+			type: 'pie',
+			color: 'white',
+			data: {
+				labels: ['Centro', 'Três Vendas', 'Areal', 'Laranjal', 'Porto', 'Fragata', '7º Distrito', '5º Distrito'],
+				datasets: [{
+					label: 'Pizzarias',
+					data: [0.66, 0.1 , 0.06, 0.06, 0.04, 0.04, 0.02, 0.02],
+					backgroundColor: ['#D66B67', '#DE965D', '#ECE788', '#B5DB7F', '#8ECDD2', '#8F97CF', '#B6A38F', '#824026', '#31bdf4', '#cc4778']
+				}]
+    		},
+			options: {
+				aspectRatio: 1,
+        title: {
+            display: true,
+            text: "Pizzarias por bairro em Pelotas",
+            fontColor: 'white'
+        },
+				legend: {
+					labels: {
+						fontColor: "white",
+					}
+				},
+			}
+		});
+
+		// ---
+
+		var ctx_Asian = document.getElementById('chart_Asian').getContext('2d');
+		var AsianPie = new Chart(ctx_Asian, {
+			type: 'pie',
+			color: 'white',
+			data: {
+				labels: ['Centro', 'Areal', 'Laranjal'],
+				datasets: [{
+					label: 'Asiático',
+					data: [0.77777778, 0.11111111, 0.11111111],
+					backgroundColor: ['#D66B67', '#DE965D', '#ECE788']
+				}]
+    		},
+			options: {
+				aspectRatio: 1,
+        title: {
+            display: true,
+            text: "Restaurantes Asiáticos por bairro em Pelotas",
+            fontColor: 'white'
+        },
+				legend: {
+					labels: {
+						fontColor: "white",
+					}
+				},
+			}
+		});
+
+    // ---
+
+		var ctx_Churrascaria = document.getElementById('chart_Churrascaria').getContext('2d');
+		var ChurrascariaPie = new Chart(ctx_Churrascaria, {
+			type: 'pie',
+			color: 'white',
+			data: {
+				labels: ['Centro', 'Laranjal', 'Porto', 'Areal', 'Gotuzzo', 'Fragata', '7º Distrito', 'Sítio Floresta', 'Três Vendas', 'São Gonçalo'],
+				datasets: [{
+					label: 'Churrascaria',
+					data: [0.55172414, 0.10344828, 0.06896552, 0.06896552, 0.03448276, 0.03448276, 0.03448276, 0.03448276, 0.03448276, 0.03448276],
+					backgroundColor: ['#D66B67', '#DE965D', '#ECE788', '#B5DB7F', '#8ECDD2', '#8F97CF', '#B6A38F', '#824026', '#31bdf4', '#cc4778']
+				}]
+    		},
+			options: {
+				aspectRatio: 1,
+        title: {
+            display: true,
+            text: "Churrascarias por bairro em Pelotas",
+            fontColor: 'white'
+        },
+				legend: {
+					labels: {
+						fontColor: "white",
+					}
+				},
+			}
+		});
+
+		// ---
+
+		var ctx_Bauru = document.getElementById('chart_Bauru').getContext('2d');
+		var Bauru = new Chart(ctx_Bauru, {
+			type: 'pie',
+			color: 'white',
+			data: {
+				labels: ['Centro', 'Areal', 'Porto', 'Três Vendas', 'Laranjal', 'Fragata'],
+				datasets: [{
+					label: 'Lanches',
+					data: [0.625  , 0.15625, 0.125  , 0.03125, 0.03125, 0.03125],
+					backgroundColor: ['#D66B67', '#DE965D', '#ECE788', '#B5DB7F', '#8ECDD2', '#8F97CF', '#B6A38F', '#824026', '#31bdf4', '#cc4778']
+				}]
+    		},
+			options: {
+				aspectRatio: 1,
+        title: {
+            display: true,
+            text: "Lancherias por bairro em Pelotas",
+            fontColor: 'white'
+        },
+				legend: {
+					labels: {
+						fontColor: "white",
+					}
+				},
+			}
+		});
+
+		// ---
+
+		var ctx_doces = document.getElementById('chart_doces').getContext('2d');
+		var doces = new Chart(ctx_doces, {
+			type: 'pie',
+			color: 'white',
+			data: {
+				labels: ['Centro', 'Laranjal', 'Porto', 'Três Vendas', 'Areal'],
+				datasets: [{
+					label: 'Doces',
+					data: [0.4375, 0.1875, 0.125 , 0.125 , 0.125 ],
+					backgroundColor: ['#D66B67', '#DE965D', '#ECE788', '#B5DB7F', '#8ECDD2', '#8F97CF', '#B6A38F', '#824026', '#31bdf4', '#cc4778']
+				}]
+    		},
+			options: {
+				aspectRatio: 1,
+        title: {
+            display: true,
+            text: "Doçarias por bairro em Pelotas",
+            fontColor: 'white'
+        },
+				legend: {
+					labels: {
+						fontColor: "white",
+					}
+				},
+			}
+		});
+
+		// ---
+
+		var ctx_cafes = document.getElementById('chart_cafes').getContext('2d');
+		var cafes = new Chart(ctx_cafes, {
+			type: 'pie',
+			color: 'white',
+			data: {
+				labels: ['Centro', 'Porto', 'Três Vendas', 'Areal', 'Padre Reus', 'São Gonçalo', '5º Distrito', 'Laranjal'],
+				datasets: [{
+					label: 'Cafés',
+					data: [0.78, 0.06, 0.04, 0.04, 0.02, 0.02, 0.02, 0.02],
+					backgroundColor: ['#D66B67', '#DE965D', '#ECE788', '#B5DB7F', '#8ECDD2', '#8F97CF', '#B6A38F', '#824026', '#31bdf4', '#cc4778']
+				}]
+    		},
+			options: {
+				aspectRatio: 1,
+        title: {
+            display: true,
+            text: "Cafeterias por bairro em Pelotas",
+            fontColor: 'white'
+        },
+				legend: {
+					labels: {
+						fontColor: "white",
+					}
+				},
+			}
+		});
+
+		// ---
+
+		var ctx_bares = document.getElementById('chart_bares').getContext('2d');
+		var bares = new Chart(ctx_bares, {
+			type: 'pie',
+			color: 'white',
+			data: {
+				labels: ['Centro', 'Fragata', 'Três Vendas', 'Areal', 'Laranjal', 'Porto', 'São Gonçalo', 'Santa Terezinha', 'Padre Reus', 'Getúlio Vargas'],
+				datasets: [{
+					label: 'Bares',
+					data: [0.52777778, 0.125, 0.125, 0.06944444, 0.05555556, 0.02777778, 0.02777778, 0.01388889, 0.01388889, 0.01388889],
+					backgroundColor: ['#D66B67', '#DE965D', '#ECE788', '#B5DB7F', '#8ECDD2', '#8F97CF', '#B6A38F', '#824026', '#31bdf4', '#cc4778']
+				}]
+    		},
+			options: {
+				aspectRatio: 1,
+        title: {
+            display: true,
+            text: "Bares por bairro em Pelotas",
+            fontColor: 'white'
+        },
+				legend: {
+					labels: {
+						fontColor: "white",
+					}
+				},
+			}
+		});
+	</script>
+</body>
+
+</html>
